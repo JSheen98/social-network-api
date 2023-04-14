@@ -83,7 +83,18 @@ router.delete('/:userId', async (req, res) => {
 // POST: Add a friend
 router.post('/:userId/friends/:friendId', async (req, res) => {
     try {
-        
+        const user = await User.findOneAndUpdate(
+            {_id: req.params.userId},
+            {$addToSet: { friends: req.params.friendId}},
+            {new: true}
+        )
+
+        if (!user) {
+            res.status(404).json({ message: 'That user ID does not exist'})
+            return
+        }
+
+        res.status(200).json({user, message: 'Friend added successfully!'})
     } catch (err) {
         res.status(500).json(err)
     }
@@ -92,10 +103,21 @@ router.post('/:userId/friends/:friendId', async (req, res) => {
 // DELETE: Remove a friend
 router.delete('/:userId/friends/:friendId', async (req, res) => {
     try {
+        const user = await User.findOneAndUpdate(
+            {_id: req.params.userId},
+            {$pull: { friends: req.params.friendId } },
+            {new: true}
+        )
 
+        if (!user) {
+            res.status(404).json({ message: 'That user ID does not exist'})
+            return
+        }
+
+        res.status(200).json({message: 'Friend removed successfully'})
     } catch (err) {
         res.status(500).json(err)
-    }
+    }   
 })
 
 module.exports = router
