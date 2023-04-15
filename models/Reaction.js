@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, Types } = require('mongoose')
 
 // Schema for Reaction model (embedded in the thoughtSchema)
 reactionSchema = new Schema(
@@ -17,12 +17,8 @@ reactionSchema = new Schema(
             required: true
         },
         createdAt: {
-            type: Date,
-            default: Date.now,
-            // Should (in theory) format the date to MM/DD/YYYY
-            get: (date) => {
-                `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(date).getFullYear()}`
-            }
+            type: String,
+            default: Date.now
         }
     }
 )

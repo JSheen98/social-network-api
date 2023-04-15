@@ -57,3 +57,4 @@ The following images represent the website's appearance:
 * Used class repo mini project to help with file structure, config, server setup, referenced for function creation
 * Mongoose documentation on Model structure and specific attributes: (trim, unique, maxLength, virtuals etc)
 * Stack Overflow to find email validation function for User model (https://stackoverflow.com/questions/18022365/mongoose-validate-email-syntax)
+* AskBCS for help on the thoughts post request and linking it to the User who created it

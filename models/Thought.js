@@ -3,7 +3,7 @@ const reactionSchema = require('./Reaction')
 const moment = require('moment')
 
 // Schema for Thought model
-thoughtSchema = new Schema(
+const thoughtSchema = new Schema(
     {
         thoughtText: {
             type: String,
@@ -13,7 +13,7 @@ thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: () => new Date(date).getMonth()
+            get: (date) => moment(date).format('m/DD/YYYY')
         },
         username: {
             type: String,
@@ -21,6 +21,13 @@ thoughtSchema = new Schema(
         },
         // Subdocument is embedded
         reactions: [reactionSchema]
+    },
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true
+        },
+        id: false
     }
 )
 
