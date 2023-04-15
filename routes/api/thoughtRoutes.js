@@ -34,10 +34,11 @@ router.get('/:thoughtId', async (req, res) => {
 // POST: create a new thought (make sure to push the created thought _id to associated user's thoughts array field)
 router.post('/', async (req, res) => {
     try {
-        const thought = await Thought.create(req.body).then(() => {
+        const thought = await Thought.create(req.body).then((newThought) => {
+            console.log(newThought)
             return User.findByIdAndUpdate(
-                {_id: userId},
-                { $set: req.body },
+                { _id: req.body._id },
+                { $set: { thoughts: { _id: newThought._id} } },
                 { new: true }
             )
         })
@@ -45,6 +46,7 @@ router.post('/', async (req, res) => {
         res.status(200).json({thought})
     } catch (err) {
         res.status(500).json(err)
+        console.log(err)
     }
 })
 

@@ -2,7 +2,7 @@
 
 ## ✏️ Description:
 
-
+The goal for this project was first, for me to gain a better understanding of the non-relational NoSQL database. Next, was to create a flexible database API that could be easily queried and updated for a social network backend. Lastly, I wanted to add several connections to showcase that even though this uses non-relational functionality, you can still reference other documents and models.
 
 
 ## 📜 License:
@@ -35,14 +35,17 @@ This project is licensed under the MIT License. See LICENSE in the repo for more
 ## 🖥️ Technologies Used
 
 * JavaScript
-* MongoDB / Mongoose
+* MongoDB / Mongoose ODM
 * MVC structure
-* npm 
+* npm
+* Moment npm package
 
 
 ## ⚙️ Installation
 
-
+1. Open the integrated terminal on the server.js file and run ``` npm i ```
+2. Once complete, run ``` npm run start ```
+3. Now you can make your requests within Postman, Insomnia, etc!
 
 
 ## 📸 Assets: 
