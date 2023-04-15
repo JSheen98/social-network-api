@@ -13,7 +13,8 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (date) => moment(date).format('m/DD/YYYY')
+            // Use moment npm package for date formatting
+            get: (date) => moment(date).format('LLL')
         },
         username: {
             type: String,
