@@ -63,3 +63,4 @@ The following video represents the website's functionality:
 * Stack Overflow to figure out best way to format dates (ended up using moment npm package) (https://stackoverflow.com/questions/7443142/how-do-i-format-dates-from-mongoose-in-node-js)
 * Moment documentation for exact date formatting
 * AskBCS for help on the thoughts post request and linking it to the User who created it
+* Tutoring session to further help me with the Thoughts post request and connecting it to the user's thoughts array

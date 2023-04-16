@@ -32,6 +32,7 @@ const userSchema = new Schema(
         ]
     },
     {
+        // virtuals to create virtual below
         toJSON: {
             virtuals: true
         },

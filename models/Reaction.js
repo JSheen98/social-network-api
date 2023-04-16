@@ -25,6 +25,7 @@ reactionSchema = new Schema(
         }
     },
     {
+        // Require getters to make get method above (date formatting) work 
         toJSON: {
             getters: true
         }
