@@ -52,7 +52,7 @@ This project is licensed under the MIT License. See LICENSE in the repo for more
 
 The following video represents the website's functionality:
 
-![] ()
+https://drive.google.com/file/d/1cSFMuw9LP4-nKmwSA-2hyxcNnuxPXxDT/view
 
 
 ## 📖 Code Resources:
