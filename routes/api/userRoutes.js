@@ -1,7 +1,5 @@
 const router = require('express').Router()
-const { ObjectId } = require('mongoose').Types
 const User  = require('../../models/User')
-const Thought  = require('../../models/User')
 
 // /api/users
 // GET: Get all users using the .find() method

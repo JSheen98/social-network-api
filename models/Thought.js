@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose')
+// Require subdocument schema from the given file
 const reactionSchema = require('./Reaction')
 const moment = require('moment')
 
@@ -24,6 +25,8 @@ const thoughtSchema = new Schema(
         reactions: [reactionSchema]
     },
     {
+        // virtuals to create virtual below
+        // getters to make get method above (date formatting) work
         toJSON: {
             virtuals: true,
             getters: true
@@ -32,8 +35,10 @@ const thoughtSchema = new Schema(
     }
 )
 
+// Use virtual to create reactionCount function
 thoughtSchema
     .virtual('reactionCount')
+    // Function to return the length of the reactions array
     .get(function() {
         return this.reactions.length
     })
